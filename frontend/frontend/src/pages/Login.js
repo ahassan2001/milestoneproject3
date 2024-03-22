@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: '',
