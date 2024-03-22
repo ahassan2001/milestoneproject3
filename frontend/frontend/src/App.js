@@ -1,6 +1,5 @@
-import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -16,11 +15,11 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <PrivateRoute exact path="/recipes" component={RecipeList} />
-          <PrivateRoute exact path="/recipes/:id" component={RecipeDetail} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/recipes/:id" element={<RecipeDetail />} />
         </Routes>
       </Router>
     </AuthProvider>

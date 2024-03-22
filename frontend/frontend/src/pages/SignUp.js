@@ -23,7 +23,7 @@ const Signup = () => {
     try {
       const response = await axios.post('http://localhost:5000/auth/signup', formData);
       console.log(response.data);
-      history.push('/login');
+      navigate('/login');
     } catch (error) {
       console.error('Signup failed:', error);
     }
