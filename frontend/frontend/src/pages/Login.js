@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/LoginSignUp.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -40,6 +41,8 @@ const Login = () => {
           onChange={handleChange}
           required
         />
+        <br/>
+        <br/>
         <label>Password:</label>
         <input
           type="password"
@@ -48,6 +51,8 @@ const Login = () => {
           onChange={handleChange}
           required
         />
+        <br/>
+        <br/>
         <button type="submit">Login</button>
       </form>
     </div>

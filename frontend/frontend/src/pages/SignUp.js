@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import '../styles/LoginSignUp.css';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -41,6 +42,8 @@ const Signup = () => {
           onChange={handleChange}
           required
         />
+        <br/>
+        <br/>
         <label>Email:</label>
         <input
           type="email"
@@ -49,6 +52,8 @@ const Signup = () => {
           onChange={handleChange}
           required
         />
+        <br/>
+        <br/>
         <label>Password:</label>
         <input
           type="password"
@@ -57,6 +62,8 @@ const Signup = () => {
           onChange={handleChange}
           required
         />
+        <br/>
+        <br/>
         <button type="submit">Signup</button>
       </form>
     </div>
