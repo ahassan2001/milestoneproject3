@@ -22,7 +22,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/signup', formData);
+      const response = await axios.post('http://localhost:5001/auth/signup', formData);
       console.log(response.data);
       navigate('/login');
     } catch (error) {

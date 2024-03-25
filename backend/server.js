@@ -20,5 +20,5 @@ mongoose.connect('mongodb+srv://ah4487855:ZinabHassan2009@ahmed.6nkfejd.mongodb.
 app.use('/recipes', recipeRoutes);
 app.use('/auth', authRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

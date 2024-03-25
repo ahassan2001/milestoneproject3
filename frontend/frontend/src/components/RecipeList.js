@@ -7,10 +7,11 @@ const RecipeList = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       const API_KEY = 'c15c17cf69c64b32a1cb8b9ae9afbcb2';
-      const url = 'https://api.spoonacular.com/recipes/complexSearch';
+      const url = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=' + API_KEY;
       try {
         const response = await axios.get(url);
-        setRecipes(response.data);
+        console.log(response);
+        setRecipes(response.data.results);
       } catch (error) {
         console.log('Failed to fetch recipes:', error);
       }

@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/auth/user', {
+        const response = await axios.get('http://localhost:5001/auth/user', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', { email, password });
+      const response = await axios.post('http://localhost:5001/auth/login', { email, password });
       localStorage.setItem('token', response.data.token);
       setUser(response.data.user);
     } catch (error) {
