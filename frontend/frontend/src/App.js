@@ -8,6 +8,7 @@ import Signup from './pages/SignUp';
 import RecipeList from './components/RecipeList';
 import RecipeDetail from './pages/RecipeDetail';
 import PrivateRoute from './components/PrivateRoutes';
+import FavoritesTab from './components/FavoritesTab';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/recipes" element={<RecipeList />} />
           <Route path="/recipes/:id" element={<RecipeDetail />} />
+          <Route path="/favorites" element={<FavoritesTab />} />
         </Routes>
       </Router>
     </AuthProvider>
