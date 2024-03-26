@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../styles/RecipeList.css';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -20,12 +21,24 @@ const RecipeList = () => {
     fetchRecipes();
   }, []);
 
+  const handleSaveRecipe = async (recipeId) => {
+    try {
+      const response = await axios.post('', { recipeId });
+      console.log('Recipe saved:', response.data);
+    } catch (error) {
+      console.log('Failed to save recipe:', error);
+    }
+  };
+
   return (
     <div>
       <h2>Recipes</h2>
       <ul>
         {recipes.map((recipe) => (
-          <li key={recipe.id}>{recipe.title}</li>
+          <li key={recipe.id}>
+            {recipe.title}
+            <button classNane="saveButton" onClick={() => handleSaveRecipe(recipe.id)}>Save</button>
+            </li>
         ))}
       </ul>
     </div>
