@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaHeart } from 'react-icons/fa';
 import '../styles/RecipeList.css';
 
 const RecipeList = () => {
@@ -37,7 +38,9 @@ const RecipeList = () => {
         {recipes.map((recipe) => (
           <li key={recipe.id}>
             {recipe.title}
-            <button className="saveButton" onClick={() => handleSaveRecipe(recipe.id)}>Save</button>
+            <button className="saveButton" onClick={() => handleSaveRecipe(recipe.id)}>
+              <FaHeart className="heartIcon" />
+              </button>
             </li>
         ))}
       </ul>
